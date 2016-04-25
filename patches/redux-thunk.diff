@@ -1,0 +1,11 @@
+--- node_modules/redux-thunk/lib/index.js	2016-04-24 11:12:19.000000000 -0400
++++ node_modules/redux-thunk/lib/index.js	2016-04-24 11:12:07.000000000 -0400
+@@ -15,4 +15,5 @@
+       return next(action);
+     };
+   };
+-}
+\ No newline at end of file
++}
++module.exports = exports['default'];
+\ No newline at end of file

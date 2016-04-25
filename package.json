@@ -1,0 +1,35 @@
+{
+  "name": "filesearch-client",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "npm run fix && npm run build:scripts && npm run build:static",
+    "build:scripts": "webpack",
+    "build:static": "mkdir -p static && cp -r static build/",
+    "clean": "rm -rf ./build",
+    "dev": "npm run fix && webpack-dev-server --hot --inline --port 8081",
+    "fix": "npm run fix:redux-thunk",
+    "fix:redux-thunk": "patch -s -r /tmp/- -f -p0 -i patches/redux-thunk.diff || echo 'Patch fails are OK'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/mjlyons/filesearch-client"
+  },
+  "author": "Mike Lyons",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.1",
+    "redux-thunk": "^2.0.1"
+  },
+  "devDependencies": {
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
